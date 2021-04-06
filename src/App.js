@@ -9,12 +9,10 @@ import { useStateValue } from "./StateProvider";
 import "./App.css";
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
-      console.log(authUser);
-
       if (authUser) {
         dispatch({
           type: "SET_USER",
@@ -27,6 +25,7 @@ function App() {
         });
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
