@@ -17,19 +17,36 @@
 
 .basketItem__info {
   padding-left: 20px;
-}
-
-.basketItem__info > button {
-  background-color: #f0c14b;
-  border-radius: 2px;
-  padding: 5px;
-  border: 1px solid;
-  margin-top: 10px;
-  border-color: #a88734 #9c7e31 #846a29;
-  color: #111;
-  cursor: pointer;
+  min-height: 100%;
+  position: relative;
+  flex-grow: 1;
 }
 
 .basketItem__rating {
   display: flex;
+}
+
+.basketItem__footer {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+}
+
+.basketItem__footer > input {
+  width: 50px;
+  max-height: 100%;
+  margin-right: 10px;
+  outline: none;
+  text-align: center;
+}
+
+.basketItem__footer > button {
+  background-color: #f0c14b;
+  border-radius: 2px;
+  padding: 5px;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  cursor: pointer;
 }

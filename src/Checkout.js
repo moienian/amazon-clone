@@ -19,11 +19,10 @@ function Checkout() {
                 title={item.title}
                 price={item.price}
                 rating={item.rating}
+                quantity={item.quantity}
               />
             );
           })}
-
-          {/* BascketItem */}
         </div>
       </div>
       <div className="checkout__right">

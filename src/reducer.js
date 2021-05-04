@@ -10,10 +10,23 @@ export const getBasketTotal = (basket) => {
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_BASKET":
-      return {
-        ...state,
-        basket: [...state.basket, action.item],
-      };
+      const inBasket = state.basket.some((item) => item.id === action.item.id);
+      if (inBasket) {
+        return {
+          ...state,
+          basket: state.basket.map((item) =>
+            item.id === action.item.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          basket: [...state.basket, action.item],
+        };
+      }
+
     case "REMOVE_FROM_BASKET":
       const index = state.basket.findIndex(
         (basketItem) => basketItem.id === action.id

@@ -14,6 +14,7 @@ function Product({ id, title, image, price, rating }) {
         image,
         price,
         rating,
+        quantity: 1,
       },
     });
   };
